@@ -8,13 +8,13 @@ float aleatoire(float , float);
 int genEntropicSeed();
 int main(){
     genEntropicSeed();
-    printf("######## Pile ou Face #########\n\n");
-    printf("Pile ou face ?\n\n1. Pile\n2. Face\n0. Quitter le jeu\n\n");
     
     int reussite=0;
     int echec=0;
+    printf("######## Pile ou Face #########\n\n");   
     while (echec!=10)
         {    
+        printf("Pile ou face ?\n\n1. Pile\n2. Face\n0. Quitter le jeu\n\n");
             char buf[255];
             memset(buf,0,255);
             fgets(buf,sizeof(buf),stdin);
@@ -31,8 +31,7 @@ int main(){
                     
                 }
             }
-            // printf("%d,%c",buf[strlen(buf)-2],buf[strlen(buf)-2]);
-            // printf("%d",strcmp(buf,"PILE"));
+            
             if (strcmp(buf,"PILE")==0||strcmp(buf,"P")==0 || strcmp(buf,"1")==0)
             {
                 reponse=1;
@@ -46,8 +45,8 @@ int main(){
                 reponse=0;
             }
             else{
-                reponse=0;
-                printf("! Réponse invalide !\n Relancez le jeu pour réessayer.\n");
+                reponse=3;
+                printf("! Réponse invalide !\n Veuillez entre une nouvvelle réponse valide.\n");
             }
         
             if (reponse==1)
@@ -61,24 +60,66 @@ int main(){
                 sleep(1);
                 printf(".\n");
                     if (reponse==r)
-                    {
+                    { 
                         printf("PILE !\n\n");
                         sleep(1);
-                        printf("C'est Gagné ! Bien joué !\n");
                         reussite++;
-                        printf("Reussite : %d\n",reussite);
-                        printf("Echec : %d\n", echec);
-                        printf("|-----------------------------|\n");
+                        if (reussite>=2 && echec<2)
+                        {
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite<2){
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(reussite<=2 && echec<=2){
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else{
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
                     }
                     if (reponse!=r)
                     {
+                        echec++;
                         printf("Face !\n\n");
                         sleep(1);
-                        printf("C'est Perdu ! Dommage... !\n");
-                        echec++;
-                        printf("Reussite : %d\n",reussite);
-                        printf("Echec : %d\n", echec);
-                        printf("|-----------------------------|\n");
+                        if (reussite>=2 && echec<2)
+                        {
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite<2){
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite>=2){
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else{
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
                     }
                     
                 
@@ -93,36 +134,103 @@ int main(){
                 printf(".\n");
                 sleep(1);
                 printf(".\n");
-                if (reponse==r)
+                    if (reponse==r)
                     {
                         printf("FACE !\n\n");
                         sleep(1);
-                        printf("C'est Gagné ! Bien joué !\n");
                         reussite++;
-                        printf("Reussite : %d\n",reussite);
-                        printf("Echec : %d\n", echec);
-                        printf("|-----------------------------|\n");
+                        if (reussite>=2 && echec<2)
+                        {
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite<2){
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec<2 && reussite<2){
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else{
+                            printf("C'est Gagné ! Bien joué !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
                     }
                     if (reponse!=r)
                     {
                         printf("PILE !\n\n");
                         sleep(1);
-                        printf("C'est Perdu ! Dommage... !\n");
                         echec++;
-                        printf("Reussite : %d\n",reussite);
-                        printf("Echec : %d\n", echec);
-                        printf("|-----------------------------|\n");
+                        if (reussite>=2 && echec<2)
+                        {
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite<2){
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else if(echec>=2 && reussite>=2){
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussites : %d\n",reussite);
+                            printf("Echecs : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
+                        else{
+                            printf("C'est perdu ! Dommage !\n");
+                            printf("Reussite : %d\n",reussite);
+                            printf("Echec : %d\n", echec);
+                            printf("|-----------------------------|\n");
+                        }
                     }
             }
             if (reponse==0 || echec==10)
             {
                 printf("Vous quittez le jeu.\n");
                 sleep(1);
-                printf("Reussites :%d\n", reussite);
-                printf("Echecs : %d\n",echec);
-                sleep(1);
-                printf("|-----------------------------|\n###########GAME OVER###########\n");
-                return 0;
+                if (reussite >=2 && echec <2)
+                {    
+                    printf("Reussites :%d\n", reussite);
+                    printf("Echec : %d\n",echec);
+                    sleep(1);
+                    printf("|-----------------------------|\n###########GAME OVER###########\n");
+                    return 0;
+                }
+                else if(reussite>=2 && echec>=2){
+                    printf("Reussites :%d\n", reussite);
+                    printf("Echecs : %d\n",echec);
+                    sleep(1);
+                    printf("|-----------------------------|\n###########GAME OVER###########\n");
+                    return 0;
+                }
+                else if(reussite<2 && echec>=2){
+                    printf("Reussite :%d\n", reussite);
+                    printf("Echecs : %d\n",echec);
+                    sleep(1);
+                    printf("|-----------------------------|\n###########GAME OVER###########\n");
+                    return 0;
+                }
+                else{
+                    printf("Reussite :%d\n", reussite);
+                    printf("Echec : %d\n",echec);
+                    sleep(1);
+                    printf("|-----------------------------|\n###########GAME OVER###########\n");
+                    return 0;
+                }
+                
             }
         }
 }
@@ -144,4 +252,3 @@ float aleatoire(float minimum,float maximum){
     int minetmax = minimum+(float)rand()/RAND_MAX*(maximum-minimum); 
     return minetmax;
 }
-
