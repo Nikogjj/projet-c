@@ -52,43 +52,44 @@ int main(){
             if (reponse==1)
             {
                 printf("\nVous faites Pile !\n");
-                printf("La pièce est jetée\n");
+                printf("La pièce est jetée");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".\n\n");
                     if (reponse==r)
                     { 
                         printf("PILE !\n\n");
                         sleep(1);
+                        char pluriel_char_wins[] = " ";
+                        char pluriel_char_fail[] = " ";
                         reussite++;
+                            printf("C'est Gagné ! Bien joué !\n");
                         if (reussite>=2 && echec<2)
                         {
-                            printf("C'est Gagné ! Bien joué !\n");
-                            printf("Reussites : %d\n",reussite);
-                            printf("Echec : %d\n", echec);
-                            printf("|-----------------------------|\n");
+                            pluriel_char_fail[0] = ' ';
+                            pluriel_char_wins[0] = 's';
                         }
                         else if(echec>=2 && reussite<2){
-                            printf("C'est Gagné ! Bien joué !\n");
-                            printf("Reussite : %d\n",reussite);
-                            printf("Echecs : %d\n", echec);
-                            printf("|-----------------------------|\n");
+                            pluriel_char_fail[0] = 's';
+                            pluriel_char_wins[0] = ' ';
                         }
-                        else if(reussite<=2 && echec<=2){
-                            printf("C'est Gagné ! Bien joué !\n");
-                            printf("Reussite : %d\n",reussite);
-                            printf("Echec : %d\n", echec);
-                            printf("|-----------------------------|\n");
+                        else if(reussite<2 && echec<2){
+                            pluriel_char_wins[0] = ' ';
+                            pluriel_char_fail[0] = ' ';
                         }
                         else{
-                            printf("C'est Gagné ! Bien joué !\n");
-                            printf("Reussites : %d\n",reussite);
-                            printf("Echecs : %d\n", echec);
-                            printf("|-----------------------------|\n");
+                            pluriel_char_fail[0] = 's';
+                            pluriel_char_wins[0] = 's';
                         }
+                        printf("Reussite%c : %d\n",pluriel_char_wins[0],reussite);
+                        printf("Echec%c : %d\n",pluriel_char_fail[0], echec);
+                        printf("|-----------------------------|\n");
                     }
                     if (reponse!=r)
                     {
@@ -127,13 +128,16 @@ int main(){
             if (reponse==2)
             {
                 printf("\nVous faites Face !\n");
-                printf("La pièce est jetée\n");
+                printf("La pièce est jetée");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".");
+                fflush(stdout);
                 sleep(1);
-                printf(".\n");
+                printf(".\n\n");
                     if (reponse==r)
                     {
                         printf("FACE !\n\n");
