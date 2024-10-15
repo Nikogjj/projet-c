@@ -33,11 +33,11 @@ int main(){
             }
             // printf("%d,%c",buf[strlen(buf)-2],buf[strlen(buf)-2]);
             // printf("%d",strcmp(buf,"PILE"));
-            if (strcmp(buf,"PILE")==0||strcmp(buf,"p")==0 || strcmp(buf,"1")==0)
+            if (strcmp(buf,"PILE")==0||strcmp(buf,"P")==0 || strcmp(buf,"1")==0)
             {
                 reponse=1;
             }
-            else if (strcmp(buf,"FACE")==0||strcmp(buf,"f")==0 || strcmp(buf,"2")==0)
+            else if (strcmp(buf,"FACE")==0||strcmp(buf,"F")==0 || strcmp(buf,"2")==0)
             {
                 reponse=2;
             }
